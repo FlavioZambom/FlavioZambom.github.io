@@ -1,10 +1,201 @@
-<!DOCTYPE html>
-<html>
+<!--
+Portfolio Professional - Template
+Instructions:
+1) Substitua os placeholders (NOME, BIO, projetos, links, imagens) no HTML.
+2) Para hospedar no GitHub Pages: crie um repositório chamado username.github.io, faça o upload deste arquivo como index.html e publique.
+3) Para contato via formulário, configure um endpoint (Formspree, Netlify Forms) ou mantenha o mailto.
+-->
+
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <title>Meu Site</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NOME — Portfolio Profissional</title>
+  <meta name="description" content="Portfolio profissional de NOME — Desenvolvedor(a) / Designer / Cargo">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4;--white:#eef2f7}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:var(--white);background:linear-gradient(180deg,#071021 0%, #081428 60%)}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav{display:flex;gap:16px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:center;margin-top:32px}
+    .hero h1{font-size:38px;margin:0 0 12px}
+    .hero p{margin:0;color:var(--muted);line-height:1.6}
+    .cta{margin-top:18px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#042028;text-decoration:none;font-weight:700}
+    .portrait{width:100%;max-width:320px;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.6);background:linear-gradient(180deg,#0b1220,#081428);padding:12px}
+    .portrait img{width:100%;height:auto;display:block}
+
+    /* Cards */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+    .card{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Projects */
+    .projects{margin-top:36px}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .project{background:var(--card);padding:14px;border-radius:10px;min-height:160px;display:flex;flex-direction:column}
+    .project img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    .project h3{margin:12px 0 6px;font-size:18px}
+    .project p{margin:0;color:var(--muted);font-size:14px;flex:1}
+    .project a{margin-top:10px;color:var(--accent);text-decoration:none;font-weight:700}
+
+    /* Skills */
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--muted)}
+
+    /* Contact */
+    .contact{margin-top:40px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px}
+    .contact form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .contact input,.contact textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)}
+    .contact textarea{grid-column:1/3;min-height:120px}
+    .contact .send{grid-column:1/3;justify-self:start}
+
+    footer{margin-top:48px;color:var(--muted);font-size:13px;padding-bottom:40px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      nav{display:none}
+      .cards{grid-template-columns:1fr}
+      .container{padding:18px}
+    }
+  </style>
 </head>
 <body>
-    <h1>Olá, mundo!</h1>
-    <p>Meu site está no ar 🚀</p>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">N</div>
+        <div>
+          <div style="font-weight:800">NOME</div>
+          <div class="muted" style="font-size:13px">Desenvolvedor(a) • UX • Front‑end</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Olá — eu sou NOME</h1>
+        <p>Sou desenvolvedor(a) com foco em interfaces limpas e experiências que convertem. Trabalho com front‑end, design de produto e soluções completas para web. Aqui estão alguns dos meus projetos selecionados e formas de contato.</p>
+        <div class="cta">
+          <a class="btn" href="#contato">Contrate-me</a>
+          <a style="margin-left:12px;color:var(--muted);font-weight:700;text-decoration:none" href="#projetos">Ver projetos →</a>
+        </div>
+
+        <div style="margin-top:28px">
+          <div class="cards">
+            <div class="card">
+              <div class="muted">Experiência</div>
+              <div style="font-weight:800;margin-top:8px">5+ anos</div>
+            </div>
+            <div class="card">
+              <div class="muted">Especialidade</div>
+              <div style="font-weight:800;margin-top:8px">Front‑end & UX</div>
+            </div>
+            <div class="card">
+              <div class="muted">Local</div>
+              <div style="font-weight:800;margin-top:8px">Cidade, País</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="portrait">
+        <!-- Substitua a imagem abaixo pela sua foto profissional (square/portrait) -->
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Sua foto">
+        <div style="margin-top:12px">
+          <div style="font-weight:700">NOME COMPLETO</div>
+          <div class="muted" style="font-size:13px;margin-top:4px">Desenvolvedor(a) • Tecnologias: React, TypeScript, Next.js</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projetos" class="projects">
+      <h2 style="margin:0 0 12px">Projetos selecionados</h2>
+      <div class="projects-grid">
+        <!-- Projeto 1 -->
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1581276879432-15a6b1b9c9f6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Projeto 1">
+          <h3>Projeto 1 — Título</h3>
+          <p>Breve descrição do projeto: problema resolvido, tecnologia usada e impacto.</p>
+          <a href="#" target="_blank">Ver case →</a>
+        </article>
+
+        <!-- Projeto 2 -->
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1526378725980-1c8f6b6e4c45?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Projeto 2">
+          <h3>Projeto 2 — Título</h3>
+          <p>Breve descrição do projeto, seu papel e resultados (métricas quando possível).</p>
+          <a href="#" target="_blank">Ver case →</a>
+        </article>
+
+        <!-- Projeto 3 -->
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Projeto 3">
+          <h3>Projeto 3 — Título</h3>
+          <p>Descrição curta do projeto, tech stack e link para o repositório ou demo.</p>
+          <a href="#" target="_blank">Ver case →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre" style="margin-top:34px">
+      <h2 style="margin:0 0 12px">Sobre mim</h2>
+      <p class="muted">NOME é um(a) profissional com experiência em desenvolvimento web e design de produto. Trabalha com times multidisciplinares para construir experiências digitais que geram resultados. Principais áreas: planejamento de produto, prototipação e implementação front‑end.</p>
+
+      <div class="skills" aria-hidden="false">
+        <span class="skill">React</span>
+        <span class="skill">TypeScript</span>
+        <span class="skill">Next.js</span>
+        <span class="skill">Figma</span>
+        <span class="skill">UX Research</span>
+        <span class="skill">CSS / Tailwind</span>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <h2 style="margin:0 0 12px">Vamos conversar?</h2>
+      <p class="muted">Envie uma mensagem — ou clique em "Contrate‑me" para solicitar orçamento.</p>
+      <!-- Exemplo simples com mailto. Para formulário funcional, integre Formspree/Netlify Forms ou backend. -->
+      <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu email" required>
+        <textarea name="mensagem" placeholder="Como posso ajudar?" required></textarea>
+        <button class="btn send" type="submit">Enviar mensagem</button>
+      </form>
+    </section>
+
+    <footer>
+      © <span id="ano"></span> NOME — Desenvolvedor(a). Portfólio criado com ❤️
+    </footer>
+  </div>
+
+  <script>
+    // Atualiza ano no rodapé
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Sugestões rápidas: substitua imagens, textos e links.
+    // Para hospedar no GitHub Pages: renomeie o arquivo para index.html, suba para um repositório público user.github.io e pronto.
+  </script>
 </body>
 </html>
